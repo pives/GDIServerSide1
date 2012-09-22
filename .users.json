@@ -1,35 +1,34 @@
 {
   "users": {
-    "phil": [
+    "phil": 
       {
         "name": "phil",
         "password": "password"
       }
-    ],
-    "stephen": [
+    ,
+    "stephen": 
       {
         "name": "stephen",
         "password": "password"
       }
-    ],
-    "yasmine": [
+    ,
+    "yasmine": 
       {
         "name": "yasmine",
         "password": "password"
       }
-    ],
-    "chris": [
+    ,
+    "chris": 
       {
         "name": "chris",
         "password": "password"
       }
-    ],
-    "jordan": [
+    ,
+    "jordan": 
       {
         "name": "jordan",
         "password": "password"
       }
-    ]
-  },
-  "field": "value"
+    
+  }
 }

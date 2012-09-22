@@ -21,10 +21,11 @@ function start(response,postData) {
 function login(response,postData){
 	var data = querystring.parse(postData);
  
-  	
-	    console.log(users);
+  		console.log(users);
+  		console.log(users.phil.name)
+	    console.log(users.phil);
 	   
-	    if(users.users[postData.username] == postData.password ) {
+	    if(users.eval(postData.username).password == postData.password ) {
 	    	response.writeHead(200, {"Content-Type": "text/plain" });
 	    	response.write("{ username : "+ postData.username+ ", loggedin : true }");
 	    	response.end();
