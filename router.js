@@ -19,7 +19,15 @@ function route(handle, pathname, response) {
 	        			throw err;
 	    			}  
     				//console.log(text);
-				    response.writeHead(200, {"Content-Type": "text/css"});
+    				var ctype = "text/plain";
+    				if(pathname.indexOf(".css") > 0 ) {
+    					ctype="text/css";
+    				} else if (pathname.indexOf(".js")> 0 ) {
+    					ctype="application/javascript"
+    				} else if (pathname.indexOf(".html") > 0) {
+    					ctype = "text/html";
+    				}
+				    response.writeHead(200, {"Content-Type": ctype });
 				    response.write(text);
 				    response.end();
     			});
