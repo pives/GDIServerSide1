@@ -1,16 +1,17 @@
 /**
   * some functions used in a chat room
   */
+var exec = require("child_process").exec;
 
 function start() {
+	var content = "empty";
   console.log("Request handler 'start' was called.");
-  function sleep(milliSeconds) {
-    var startTime = new Date().getTime();
-    while (new Date().getTime() < startTime + milliSeconds);
-  }
+  exec("ls -lah", function (error, stdout, stderr) {
+    content = stdout;
+  });
 
-  sleep(10000);
-  return "starting session";
+  return content;
+  
 }
 
 function login(username, passwd) {
