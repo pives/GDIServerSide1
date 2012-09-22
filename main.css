@@ -6,6 +6,9 @@ html, body, h1 {
 #inputform {
 	width:80%;
 }
+#loginform {
+	visibility: hidden;
+}
 textarea {
 	width:400px;
 	height:200px;
