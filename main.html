@@ -1,11 +1,21 @@
 <html>
 <head><title> Phil Ives' Chat Room </title>
 	<link rel="stylesheet" href="main.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
 </head>
 <body>
 <h1> Welcome to the chat</h1>
+<div id="loginform" >
+	<form name="login" method="post">
+		userid:
+		<input type="text" name="username">
+		password:
+		<input type="password" name="password">
+		<button type="submit" name="login">Login</button>
+	</form>	
+<div>	
 <div class="roomspace">
-	<div id="chatlog"></div>
+	<div id="chatlog">Chat log</div>
 
 	<div id="inputform">
 		<form name="chatform" method="post">

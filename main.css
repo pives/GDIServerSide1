@@ -1,6 +1,7 @@
 html, body, h1 {
 	font-family:Arial, sans-serif;
 	background-color:black;
+	color:white;
 }
 #inputform {
 	width:80%;
@@ -15,5 +16,5 @@ textarea {
 	border: 5px solid red;
 	margin-bottom: 40px;
 	background-color: gray;
-	color: red;
+	
 }
