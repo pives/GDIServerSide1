@@ -12,7 +12,7 @@ handle["/login"] = requestHandlers.login;
 handle["/getchannels"] = requestHandlers.getChannels;
 handle["/joinchannel"] = requestHandlers.joinChannel;
 handle["/getusers"] = requestHandlers.getChannelUsers;
-
+handle["/say"] = requestHandlers.say;
 
  
 

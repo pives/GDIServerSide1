@@ -4,10 +4,10 @@
  */
  var fs = require("fs");
 
-function route(handle, pathname, response) {
+function route(handle, pathname, response, postData) {
     console.log ("routing request for " + pathname) ;
     if(typeof handle[pathname] ==='function') {
-    	handle[pathname](response);
+    	handle[pathname](response,postData);
     } else {
 
     	console.log("No request Handler defined for " + pathname);

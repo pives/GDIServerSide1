@@ -1,5 +1,7 @@
 <html>
-<head><title> Phil Ives' Chat Room </title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title> Phil Ives' Chat Room </title>
 	<link rel="stylesheet" href="main.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
 </head>
@@ -19,7 +21,7 @@
 	<div id="chatlog" data-chatlog>Chat log</div>
 
 	<div id="inputform">
-		<form name="chatform" method="post">
+		<form name="chatform" method="post" action="./say">
 
 		<textarea name="chattext"></textarea>
 		<button type="submit" name="send">Send</button>
