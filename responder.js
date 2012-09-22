@@ -16,10 +16,8 @@ function start(route,handle) {
 	response.writeHead(200, {"Content-Type": "text/plain"});
 	var pathname = url.parse(request.url).pathname;
 	console.log(" Request for pathname " + pathname );
-	route(handle, pathname);
-	response.write("Hello Wold\nThe url path was " + pathname);
-	response.end();
-    }
+	route(handle, pathname, response); // we've added response!
+	}
 
     http.createServer(onRequest).listen(8000);
     console.log("started");
