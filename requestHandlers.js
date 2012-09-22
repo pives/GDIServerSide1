@@ -1,6 +1,7 @@
 var fs = require('fs'); // the file system library
 var usersfile = require("./users.json");
 var querystring = require('querystring');
+var url = require("url");
 
 /**
   * some functions used in a chat room
@@ -23,18 +24,26 @@ function login(response,postData){
 	var data = querystring.parse(postData);
  
   		
-  	   var users = JSON.parse(fs.readFileSync("./users.json"));
-	   console.log(users);
-	   console.log(users.users.phil);  //have fun explaining this. 
-	    if(users.eval(postData.username).password == postData.password ) {
+  	  
+	   console.log(usersfile);
+	   console.log(usersfile.users.phil);  //have fun explaining this. 
+	   console.log(data);
+	   try {
+	    if(usersfile.users[data.username].password == data.password ) {
 	    	response.writeHead(200, {"Content-Type": "text/plain" });
-	    	response.write("{ username : "+ postData.username+ ", loggedin : true }");
+	    	response.write("{ username : "+ data.username+ ", loggedin : true }");
 	    	response.end();
 	    } else {
 	  		response.writeHead(401, {"Content-Type": "text/plain" });
 	    	response.write("invalid credentials");
 	    	response.end();
 	    }
+	    } catch (e) {
+		    response.writeHead(401, {"Content-Type": "text/plain" });
+	    	response.write("invalid credentials");
+	    	response.end();
+	    }
+	    
 	
 }
 
