@@ -1,6 +1,7 @@
 var fs = require('fs'); // the file system library
-var users = require('./.users.json');
+var usersfile = require("./users.json");
 var querystring = require('querystring');
+
 /**
   * some functions used in a chat room
   */
@@ -21,10 +22,10 @@ function start(response,postData) {
 function login(response,postData){
 	var data = querystring.parse(postData);
  
-  		console.log(users);
-  		console.log(users.phil.name)
-	    console.log(users.phil);
-	   
+  		
+  		var users = JSON.parse(fs.readFileSync("./users.json"));
+	   console.log(users);
+	   console.log(users["phil"]);
 	    if(users.eval(postData.username).password == postData.password ) {
 	    	response.writeHead(200, {"Content-Type": "text/plain" });
 	    	response.write("{ username : "+ postData.username+ ", loggedin : true }");
