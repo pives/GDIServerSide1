@@ -1,4 +1,5 @@
 var fs = require('fs'); // the file system library
+var users = require('./.users.json');
 var querystring = require('querystring');
 /**
   * some functions used in a chat room
@@ -17,9 +18,26 @@ function start(response,postData) {
     });
 }
 
-function login(response,postData) {
-  console.log("Request handler 'login' was called.");
+function login(response,postData){
+	var data = querystring.parse(postData);
+ 
+  	
+	    console.log(users);
+	   
+	    if(users.users[postData.username] == postData.password ) {
+	    	response.writeHead(200, {"Content-Type": "text/plain" });
+	    	response.write("{ username : "+ postData.username+ ", loggedin : true }");
+	    	response.end();
+	    } else {
+	  		response.writeHead(401, {"Content-Type": "text/plain" });
+	    	response.write("invalid credentials");
+	    	response.end();
+	    }
+	
 }
+
+
+
 
 function getChannels(response,postData) {
 	console.log("request for getChannels");
