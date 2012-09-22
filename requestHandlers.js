@@ -23,9 +23,9 @@ function login(response,postData){
 	var data = querystring.parse(postData);
  
   		
-  		var users = JSON.parse(fs.readFileSync("./users.json"));
+  	   var users = JSON.parse(fs.readFileSync("./users.json"));
 	   console.log(users);
-	   console.log(users["phil"]);
+	   console.log(users.users.phil);  //have fun explaining this. 
 	    if(users.eval(postData.username).password == postData.password ) {
 	    	response.writeHead(200, {"Content-Type": "text/plain" });
 	    	response.write("{ username : "+ postData.username+ ", loggedin : true }");
