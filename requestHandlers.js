@@ -36,7 +36,7 @@ function say(response, postData) {
 	var data = querystring.parse(postData);
 	console.log(data);
 	response.writeHead(200, {"Content-Type": "text/plain" });
-	response.write("hi"+data.chattext);
+	response.write("{ logtext : "+ data.chattext+ " }");
 	response.end();
 }
 
