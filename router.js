@@ -14,11 +14,11 @@ function route(handle, pathname, response) {
     	try {
     		stats = fs.lstatSync('.'+pathname);
     		if(stats.isFile()) {
-    			fs.readFile('./main.css', function (err, text) {
+    			fs.readFile('.'+pathname, function (err, text) {
 	    			if (err) {
 	        			throw err;
 	    			}  
-    				console.log(text);
+    				//console.log(text);
 				    response.writeHead(200, {"Content-Type": "text/css"});
 				    response.write(text);
 				    response.end();
