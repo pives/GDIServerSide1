@@ -16,8 +16,8 @@ function start(route,handle) {
 	response.writeHead(200, {"Content-Type": "text/plain"});
 	var pathname = url.parse(request.url).pathname;
 	console.log(" Request for pathname " + pathname );
-	route(handle, pathname);
-	response.write("Hello Wold\nThe url path was " + pathname);
+	var content = route(handle, pathname);
+	response.write(content);
 	response.end();
     }
 
